@@ -1,5 +1,6 @@
-import Head from 'next/head'
-import Link from 'next/link'
+import Head from "next/head";
+import Link from "next/link";
+import Image from 'next/image'
 
 export default function Layout({ children, title = "HP by Nextjs" }) {
   return (
@@ -12,13 +13,19 @@ export default function Layout({ children, title = "HP by Nextjs" }) {
           <div className="flex items-center pl-8 h-14">
             <div className="flex space-x-4">
               <Link href="/">
-                <a className="text-gray-300 hover:bg-gray-700 px-3 py-2 rounded">Home</a>
+                <a className="text-gray-300 hover:bg-gray-700 px-3 py-2 rounded">
+                  Home
+                </a>
               </Link>
               <Link href="/blog">
-                <a className="text-gray-300 hover:bg-gray-700 px-3 py-2 rounded">Blog</a>
+                <a className="text-gray-300 hover:bg-gray-700 px-3 py-2 rounded">
+                  Blog
+                </a>
               </Link>
               <Link href="/contact">
-                <a className="text-gray-300 hover:bg-gray-700 px-3 py-2 rounded">Contact</a>
+                <a className="text-gray-300 hover:bg-gray-700 px-3 py-2 rounded">
+                  Contact
+                </a>
               </Link>
             </div>
           </div>
@@ -28,8 +35,16 @@ export default function Layout({ children, title = "HP by Nextjs" }) {
         {children}
       </main>
       <footer className="w-full h-12 flex justify-center items-center border-t">
-        <img src="/vercel.svg" alt="V Logo" className="h-4 ml-2"/>
+        <a
+          className="flex items-center"
+          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Powered by{" "}
+          <Image src="/vercel.svg" alt="Vercel Logo" width={72} height={16} />
+        </a>
       </footer>
     </div>
-  )
+  );
 }
